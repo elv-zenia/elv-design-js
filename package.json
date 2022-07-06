@@ -1,0 +1,61 @@
+{
+  "name": "@eluvio/elv-design-js",
+  "version": "0.1.0",
+  "description": "A component library for Eluvio media applications.",
+  "main": "index.js",
+  "author": "Eluvio, Inc.",
+  "license": "MIT",
+  "scripts": {
+    "serve": "webpack-dev-server --hot --host 0.0.0.0",
+    "build": "rm -rf dist/* && webpack-cli --mode production --no-devtool",
+    "lint": "npm run fix-scss ; npm run fix-js",
+    "fix-scss": "sass-lint-auto-fix -c .scss-lint.yml",
+    "lint-js": "./node_modules/.bin/eslint \"src/**/*.js\"",
+    "fix-js": "npm run lint-js -- --fix",
+    "prepare": "husky install",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "@storybook/addon-a11y": "^6.5.9",
+    "classnames": "^2.3.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-inlinesvg": "^3.0.0",
+    "styled-components": "^5.3.5"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.18.2",
+    "@mdx-js/react": "^1.6.22",
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-backgrounds": "^6.5.9",
+    "@storybook/addon-contexts": "^5.3.21",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-interactions": "^6.5.9",
+    "@storybook/addon-links": "^6.5.9",
+    "@storybook/addons": "^6.5.9",
+    "@storybook/builder-webpack5": "^6.5.9",
+    "@storybook/manager-webpack5": "^6.5.9",
+    "@storybook/react": "^6.5.9",
+    "@storybook/testing-library": "^0.0.13",
+    "eslint": "7.32.0",
+    "eslint-plugin-react": "^7.30.0",
+    "husky": "^8.0.1",
+    "sass": "^1.52.1",
+    "sass-lint-auto-fix": "^0.21.2",
+    "svg-inline-loader": "^0.8.2"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "overrides": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "resolutions": {
+    "styled-components": "^5"
+  }
+}
