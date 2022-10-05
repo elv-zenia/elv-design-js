@@ -1,7 +1,7 @@
 import {createGlobalStyle} from "styled-components";
 import {primaryFont} from "./typography";
 
-const GlobalStyles = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   *,
   *::before,
   *::after {
@@ -20,12 +20,10 @@ const GlobalStyles = createGlobalStyle`
   }
 
   button {
-    background-color: transparent;
     border-width: 0;
     color: inherit;
     cursor: pointer;
     padding: 0;
-    width: 500px;
   }
 
   input {
@@ -72,5 +70,3 @@ const GlobalStyles = createGlobalStyle`
     white-space: revert;
   }
 `;
-
-export default GlobalStyles;

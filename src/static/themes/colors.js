@@ -22,6 +22,11 @@ export const dark = {
   40: "#171717"
 };
 
+// TODO: Remove when colors are set
+export const temp = {
+  10: "#cf0808f2"
+};
+
 export const gradient = {
   10: `linear-gradient(180deg, ${purple[10]} 0%, ${purple[20]} 100%)`,
   20: `linear-gradient(180deg, ${dark[20]} 0%, ${dark[30]} 100%)`,

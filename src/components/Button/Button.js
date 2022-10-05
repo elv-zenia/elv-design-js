@@ -5,34 +5,70 @@ import SVG from "react-inlinesvg";
 const classNames = require("classnames");
 
 const StyledButton = styled.button`
-  background: ${({theme, variant}) => variant === "primary" ? theme.buttonPrimary : theme.buttonSecondary};
+  color: ${({theme}) => theme.textPrimaryColor};
   border-radius: 16px;
-  color: ${({theme}) => theme.textPrimary};
-  font-size: ${({theme}) => theme.fontPrimary};
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
   padding: 8px 16px;
+  font-size: ${({theme}) => theme.buttonFontSize};
+  max-width: 20rem;
+  min-height: 2rem;
+  width: max-content;
+  transition: 0.3s;
   
-  ${({variant}) => variant === "primary" &&
+  &:hover:not(:disabled) {
+    opacity: 80%;
+  }
+  
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 40%;
+  }
+  
+  ${({variant, theme}) =>
+  variant === "primary" &&
+  `
+    background: ${theme.buttonPrimaryBg};
+    color: ${theme.buttonPrimaryTextColor};
+  `
+  }};
+
+  ${({variant, theme}) =>
+    variant === "secondary" &&
     `
-      background: ${({theme}) => theme.buttonPrimary};
-      border: none;
+      background: ${theme.buttonSecondaryBg};
+      border-color: ${theme.buttonSecondaryBorder};
+      color: ${theme.buttonSecondaryTextColor};
     `
   };
   
-  ${({variant}) => variant === "secondary" &&
+  ${({variant, theme}) =>
+    variant === "danger" &&
     `
-      background: ${({theme}) => theme.buttonSecondary};
-      border: ${({theme}) => `1px solid ${theme.buttonBorder}`}
+      background: ${theme.buttonDangerBg};
+      color: ${theme.buttonDangerTextColor};
+    `
+  };
+  
+  ${({fullWidth}) => fullWidth &&
+    `
+      border-radius: 4px;
+      max-width: 100%;
+      width: 100%;
     `
   };
 `;
 
 const IconButton = styled(StyledButton)`
   border-radius: 100%;
-  width: 45px;
-  height: 45px;
+  min-height: calc(3rem + 2px);
+  padding-left: 1rem;
+  padding-right: 1rem;
   
   .elv-button--svg {
-    width: 16px;
+    height: 1rem;
+    width: 1rem;
   }
 `;
 
@@ -42,7 +78,8 @@ const Button = ({
   disabled=false,
   variant="primary",
   icon,
-  iconOnly=false
+  iconOnly=false,
+  fullWidth=false
 }) => {
   const buttonClasses = classNames(className, {
     "elv-button": true,
@@ -67,8 +104,9 @@ const Button = ({
         disabled={disabled}
         variant={variant}
         type="button"
+        fullWidth={fullWidth}
       >
-        {children}
+        { children }
       </StyledButton>
     );
   }
@@ -76,7 +114,7 @@ const Button = ({
 
 Button.propTypes = {
   /**
-   * Specify the content of your Button
+   * Specify the content of your button
    */
   children: PropTypes.node,
 
@@ -89,6 +127,11 @@ Button.propTypes = {
    * Specify whether the button should be disabled
    */
   disabled: PropTypes.bool,
+
+  /**
+   * Option to fit button width to its parent width
+   */
+  fullWidth: PropTypes.bool,
 
   /**
    * Specify an icon to render
@@ -107,3 +150,4 @@ Button.propTypes = {
 };
 
 export default Button;
+

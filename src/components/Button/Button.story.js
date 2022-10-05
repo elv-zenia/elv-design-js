@@ -4,11 +4,20 @@ import CopyIcon from "../../static/icons/copy.svg";
 import Button from "./Button";
 
 export default {
-  title: "Example/Button",
+  title: "Components/Button",
   component: Button,
-  parameters: {
-    layout: "fullscreen",
-  },
+  argTypes: {
+    variant: {
+      options: ["primary", "secondary", "danger", "icon"],
+      control: {type: "select"}
+    },
+    children: {
+      control: false
+    },
+    icon: {
+      control: false
+    },
+  }
 };
 
 const Template = (args) => <Button {...args}>Button</Button>;
