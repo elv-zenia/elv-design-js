@@ -2,7 +2,6 @@ import React from "react";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-// import {CheckIcon} from "@radix-ui/react-icons";
 import CheckIcon from "../../static/icons/check.svg";
 import ImageIcon from "../ImageIcon/ImageIcon";
 
@@ -34,7 +33,7 @@ const StyledIndicator = styled(CheckboxPrimitive.Indicator)`
 const CheckboxRoot = StyledCheckbox;
 const CheckboxIndicator = StyledIndicator;
 
-const Flex = styled("flex")`
+const Flex = styled("div")`
   display: flex;
   align-items: center;
 `;
@@ -60,7 +59,7 @@ const Checkbox = ({label}) => {
 
 Checkbox.propTypes = {
   /**
-   * k
+   * Provide a label to describe the Checkbox input
    */
   label: PropTypes.string
 };

@@ -60,7 +60,7 @@ Avatar.propTypes = {
   image: PropTypes.string,
 
   /**
-   * text
+   * Alternative text to describe an image
    */
   alt: PropTypes.string
 };

@@ -32,3 +32,9 @@ export const gradient = {
   20: `linear-gradient(180deg, ${dark[20]} 0%, ${dark[30]} 100%)`,
   30: `linear-gradient(180deg, ${pink[10]} 0%, ${pink[20]} 100%)`
 };
+
+export const rgb = {
+  10: "rgb(0, 0, 0, 40%)",
+  20: "rgb(130, 130, 135, 30%)",
+  30: "rgb(14, 18, 22, 35%) 0 10px 38px -10px, rgb(14, 18, 22, 20%) 0 10px 20px -15px"
+};

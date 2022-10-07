@@ -8,7 +8,7 @@ export default {
   component: Button,
   argTypes: {
     variant: {
-      options: ["primary", "secondary", "danger", "icon"],
+      options: ["primary", "secondary", "danger", "icon", "ghost"],
       control: {type: "select"}
     },
     children: {
@@ -35,6 +35,11 @@ Secondary.args = {
 export const Danger = Template.bind({});
 Danger.args = {
   variant: "danger"
+};
+
+export const Ghost = Template.bind({});
+Ghost.args = {
+  variant: "ghost"
 };
 
 export const IconButton = Template.bind({});

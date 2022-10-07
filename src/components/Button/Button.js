@@ -50,6 +50,17 @@ const StyledButton = styled.button`
       color: ${theme.buttonDangerTextColor};
     `
   };
+
+  ${({variant}) =>
+    variant === "ghost" &&
+    `
+      background: none;
+      
+      &:hover:not(:disabled) {
+        background: rgba(0, 0, 0, 10%);
+      }
+    `
+  }
   
   ${({fullWidth}) => fullWidth &&
     `
@@ -72,15 +83,16 @@ const IconButton = styled(StyledButton)`
   }
 `;
 
-const Button = ({
+const Button = React.forwardRef(({
   children,
   className,
   disabled=false,
   variant="primary",
   icon,
   iconOnly=false,
-  fullWidth=false
-}) => {
+  fullWidth=false,
+  onClick
+}, ref) => {
   const buttonClasses = classNames(className, {
     "elv-button": true,
   });
@@ -93,6 +105,8 @@ const Button = ({
         disabled={disabled}
         variant={variant}
         type="button"
+        innerRef={ref}
+        onClick={onClick}
       >
         <SVG className="elv-button--svg" src={icon} />
       </IconButton>
@@ -105,12 +119,14 @@ const Button = ({
         variant={variant}
         type="button"
         fullWidth={fullWidth}
+        innerRef={ref}
+        onClick={onClick}
       >
         { children }
       </StyledButton>
     );
   }
-};
+});
 
 Button.propTypes = {
   /**
@@ -136,12 +152,12 @@ Button.propTypes = {
   /**
    * Specify an icon to render
    */
-  icon: PropTypes.object,
+  icon: PropTypes.string,
 
   /**
    * Provide a function to be called when the button is clicked
    */
-  OnClick: PropTypes.func,
+  onClick: PropTypes.func,
 
   /**
    * Specify the type of button you want to create

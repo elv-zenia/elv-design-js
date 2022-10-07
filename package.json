@@ -19,14 +19,15 @@
   "dependencies": {
     "@radix-ui/react-avatar": "^1.0.0",
     "@radix-ui/react-checkbox": "^1.0.0",
+    "@radix-ui/react-dialog": "^1.0.0",
     "@radix-ui/react-icons": "^1.1.1",
     "@radix-ui/react-select": "^1.0.0",
     "@storybook/addon-a11y": "^6.5.9",
     "classnames": "^2.3.1",
     "mini-css-extract-plugin": "^2.6.1",
     "prop-types": "^15.8.1",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-inlinesvg": "^3.0.0",
     "styled-components": "^5.3.5"
   },
@@ -58,8 +59,8 @@
     ]
   },
   "overrides": {
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "resolutions": {
     "styled-components": "^5"

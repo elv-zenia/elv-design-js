@@ -1,4 +1,4 @@
-import {neutral, gradient, temp, dark, purple} from "./colors";
+import {neutral, gradient, temp, dark, purple, rgb} from "./colors";
 import {primaryFont, typeScale} from "./typography";
 
 export const lightTheme = {
@@ -13,9 +13,9 @@ export const lightTheme = {
   //
   buttonPrimaryBg: gradient[10],
   buttonPrimaryTextColor: neutral[10],
-  buttonSecondaryBg: gradient[20],
-  buttonSecondaryTextColor: neutral[10],
-  buttonSecondaryBorder: neutral[30],
+  buttonSecondaryBg: neutral[10],
+  buttonSecondaryTextColor: dark[10],
+  buttonSecondaryBorder: dark[10],
   buttonDangerBg: temp[10],
   buttonDangerTextColor: neutral[10],
   buttonFontSize: typeScale.button1,
@@ -27,6 +27,14 @@ export const lightTheme = {
   checkboxBorder: neutral[30],
   checkboxIcon: dark[10],
   checkboxFocus: purple[20],
+  //
+  //
+  // Dialog
+  //
+  dialogBg: neutral[10],
+  dialogTextColor: dark[10],
+  dialogBoxShadow: rgb[30],
+  dialogOverlayBg: rgb[10],
   //
   // Font Face
   //
@@ -63,6 +71,14 @@ export const darkTheme = {
   checkboxBorder: neutral[20],
   checkboxIcon: dark[10],
   checkboxFocus: purple[10],
+  //
+  //
+  // Dialog
+  //
+  dialogBg: gradient[20],
+  dialogTextColor: neutral[10],
+  dialogBoxShadow: rgb[30],
+  dialogOverlayBg: rgb[20],
   //
   // Font Face
   //
