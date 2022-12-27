@@ -50,7 +50,7 @@ const Avatar = ({text, image, alt}) => {
 
 Avatar.propTypes = {
   /**
-   * An element that renders when the image hasn't rendered
+   * An element that renders when the image hasn't rendered.
    */
   text: PropTypes.string,
 

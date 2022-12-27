@@ -73,7 +73,7 @@ const Dialog = ({
             <DialogDescription>{ description }</DialogDescription>
             <Flex>
               <DialogClose asChild>
-                <Button variant="secondary" OnClick={CancelCallback}>{ cancelText }</Button>
+                <Button variant="ghost" OnClick={CancelCallback}>{ cancelText }</Button>
               </DialogClose>
               <DialogClose asChild>
                 <Button variant={danger ? "danger" : "primary"} OnClick={ConfirmCallback}>
@@ -119,7 +119,7 @@ Dialog.propTypes  = {
   /**
    * The button that opens the dialog
    */
-  trigger: PropTypes.elementType,
+  trigger: PropTypes.object,
 
   /**
    * Specify the title of your dialog
@@ -127,7 +127,7 @@ Dialog.propTypes  = {
   title: PropTypes.string,
 
   /**
-   *
+   * Specify the description in your dialog
    */
   description: PropTypes.string,
 

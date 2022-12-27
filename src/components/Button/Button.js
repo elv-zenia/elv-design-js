@@ -73,9 +73,9 @@ const StyledButton = styled.button`
 
 const IconButton = styled(StyledButton)`
   border-radius: 100%;
-  min-height: calc(3rem + 2px);
-  padding-left: 1rem;
-  padding-right: 1rem;
+  min-height: 43px;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
   
   .elv-button--svg {
     height: 1rem;
@@ -153,6 +153,11 @@ Button.propTypes = {
    * Specify an icon to render
    */
   icon: PropTypes.string,
+
+  /**
+   * Specify whether the button should have an icon and no text
+   */
+  iconOnly: PropTypes.bool,
 
   /**
    * Provide a function to be called when the button is clicked

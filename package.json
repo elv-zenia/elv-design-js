@@ -6,21 +6,21 @@
   "author": "Eluvio, Inc.",
   "license": "MIT",
   "scripts": {
-    "serve": "webpack-dev-server --hot --host 0.0.0.0",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
     "build": "rm -rf dist/* && webpack-cli --mode production --no-devtool",
     "lint": "npm run fix-scss ; npm run fix-js",
     "fix-scss": "sass-lint-auto-fix -c .scss-lint.yml",
     "lint-js": "./node_modules/.bin/eslint \"src/**/*.js\"",
     "fix-js": "npm run lint-js -- --fix",
-    "prepare": "husky install",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.0.0",
     "@radix-ui/react-checkbox": "^1.0.0",
     "@radix-ui/react-dialog": "^1.0.0",
     "@radix-ui/react-icons": "^1.1.1",
+    "@radix-ui/react-label": "^2.0.0",
     "@radix-ui/react-select": "^1.0.0",
     "@storybook/addon-a11y": "^6.5.9",
     "classnames": "^2.3.1",
@@ -50,7 +50,9 @@
     "husky": "^8.0.1",
     "sass": "^1.52.1",
     "sass-lint-auto-fix": "^0.21.2",
-    "svg-inline-loader": "^0.8.2"
+    "svg-inline-loader": "^0.8.2",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
   },
   "babel": {
     "presets": [

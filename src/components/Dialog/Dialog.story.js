@@ -11,7 +11,7 @@ const Template = (args) => <Dialog {...args}></Dialog>;
 
 export const Default = Template.bind({});
 Default.args = {
-  trigger: <Button>Open Dialog</Button>,
+  trigger: <Button>Open a Dialog</Button>,
   title: "Dialog Title",
   description: "This is a dialog"
 };

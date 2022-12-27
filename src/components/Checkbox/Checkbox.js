@@ -33,12 +33,12 @@ const StyledIndicator = styled(CheckboxPrimitive.Indicator)`
 const CheckboxRoot = StyledCheckbox;
 const CheckboxIndicator = StyledIndicator;
 
-const Flex = styled("div")`
+const Flex = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const Label = styled("label")`
+const StyledLabel = styled.label`
   line-height: 1;
   padding-left: 0.675rem;
   color: ${({theme}) => theme.labelColor};
@@ -52,7 +52,7 @@ const Checkbox = ({label}) => {
           <ImageIcon icon={CheckIcon} className="check-icon" />
         </CheckboxIndicator>
       </CheckboxRoot>
-      <Label htmlFor="checkbox1">{ label }</Label>
+      <StyledLabel htmlFor="checkbox1">{ label }</StyledLabel>
     </Flex>
   );
 };
