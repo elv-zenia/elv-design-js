@@ -13,7 +13,7 @@ export const Default = Template.bind({});
 Default.args = {
   trigger: <Button>Open a Dialog</Button>,
   title: "Dialog Title",
-  description: "This is a dialog"
+  description: "This is a dialog."
 };
 
 export const Danger = Template.bind({});

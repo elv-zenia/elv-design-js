@@ -59,7 +59,7 @@ const Checkbox = ({label}) => {
 
 Checkbox.propTypes = {
   /**
-   * Provide a label to describe the Checkbox input
+   * The label to be displayed beside the checkbox.
    */
   label: PropTypes.string
 };

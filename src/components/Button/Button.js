@@ -6,7 +6,7 @@ const classNames = require("classnames");
 
 const StyledButton = styled.button`
   color: ${({theme}) => theme.textPrimaryColor};
-  border-radius: 16px;
+  border-radius: 5px;
   border-width: 1px;
   border-style: solid;
   border-color: transparent;
@@ -64,7 +64,7 @@ const StyledButton = styled.button`
   
   ${({fullWidth}) => fullWidth &&
     `
-      border-radius: 4px;
+      border-radius: 5px;
       max-width: 100%;
       width: 100%;
     `
@@ -72,7 +72,6 @@ const StyledButton = styled.button`
 `;
 
 const IconButton = styled(StyledButton)`
-  border-radius: 100%;
   min-height: 43px;
   padding-left: 0.8rem;
   padding-right: 0.8rem;
@@ -130,45 +129,44 @@ const Button = React.forwardRef(({
 
 Button.propTypes = {
   /**
-   * Specify the content of your button
+   * The content of the button.
    */
   children: PropTypes.node,
 
   /**
-   * Specify an optional className to be added to your button
+   * An optional className to be added to the button.
    */
   className: PropTypes.string,
 
   /**
-   * Specify whether the button should be disabled
+   * Determines the disabled state.
    */
   disabled: PropTypes.bool,
 
   /**
-   * Option to fit button width to its parent width
+   * The variant to use.
    */
-  fullWidth: PropTypes.bool,
+  variant: PropTypes.oneOf(["primary", "secondary", "tertiary", "danger", "ghost"]),
 
   /**
-   * Specify an icon to render
+   * An icon to render. Required when iconOnly is true.
    */
   icon: PropTypes.string,
 
   /**
-   * Specify whether the button should have an icon and no text
+   * If set to true, an icon will be rendered with no text.
    */
   iconOnly: PropTypes.bool,
 
   /**
-   * Provide a function to be called when the button is clicked
+   * Option to fit button width to its parent width.
    */
-  onClick: PropTypes.func,
+  fullWidth: PropTypes.bool,
 
   /**
-   * Specify the type of button you want to create
+   * Event handler called when the button is clicked.
    */
-  variant: PropTypes.oneOf(["primary", "secondary", "tertiary", "danger", "ghost"])
+  onClick: PropTypes.func
 };
 
 export default Button;
-

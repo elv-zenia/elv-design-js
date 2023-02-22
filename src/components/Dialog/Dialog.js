@@ -97,52 +97,52 @@ const Dialog = ({
 
 Dialog.propTypes  = {
   /**
-   * Provide a function to be called when the confirm button is clicked
-   */
-  ConfirmCallback: PropTypes.func,
-
-  /**
-   * Provide a function to be called when the cancel button is clicked
-   */
-  CancelCallback: PropTypes.func,
-
-  /**
-   * Specify the text for your cancel button
-   */
-  cancelText: PropTypes.string,
-
-  /**
-   * Specify the text for your confirm button
-   */
-  confirmText: PropTypes.string,
-
-  /**
-   * The button that opens the dialog
-   */
-  trigger: PropTypes.object,
-
-  /**
-   * Specify the title of your dialog
-   */
-  title: PropTypes.string,
-
-  /**
-   * Specify the description in your dialog
-   */
-  description: PropTypes.string,
-
-  /**
-   * The controlled open state of the dialog. Must be used with onOpenChange
+   * The controlled open state of the dialog. Must be used with onOpenChange.
    */
   open: PropTypes.bool,
 
   /**
-   * Event handler called when the open state of the dialog changes
+   * Event handler called when the open state of the dialog changes.
    */
   onOpenChange: PropTypes.func,
 
   /**
-   * Specifies a danger variant for the primary button
+   * The button that opens the dialog.
+   */
+  trigger: PropTypes.object,
+
+  /**
+   * The title of the dialog.
+   */
+  title: PropTypes.string,
+
+  /**
+   * The description in the dialog.
+   */
+  description: PropTypes.string,
+
+  /**
+   * The text for the cancel button.
+   */
+  cancelText: PropTypes.string,
+
+  /**
+   * Event handler called when the cancel button is clicked.
+   */
+  CancelCallback: PropTypes.func,
+
+  /**
+   * The text for the confirm button.
+   */
+  confirmText: PropTypes.string,
+
+  /**
+   * Event handler called when the confirm button is clicked.
+   */
+  ConfirmCallback: PropTypes.func,
+
+  /**
+   * Specifies a danger variant for the primary button.
    */
   danger: PropTypes.bool
 };

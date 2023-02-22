@@ -1,6 +1,3 @@
-import {addDecorator} from "@storybook/react";
-import {withContexts} from "@storybook/addon-contexts/react";
-import {contexts} from "./contexts";
 import React from "react";
 import "./styles.css";
 import {darkTheme, GlobalStyle, lightTheme} from "../src/static/themes";
@@ -10,10 +7,10 @@ export const globalTypes = {
   theme: {
     name: "Theme",
     description: "Set the global theme for displaying components",
-    defaultValue: "Light",
+    defaultValue: "light",
     toolbar: {
       icon: "paintbrush",
-      items: ["Light", "Dark"]
+      items: ["light", "dark"]
     }
   }
 };
@@ -35,10 +32,10 @@ export const parameters = {
     manual: true,
   },
   backgrounds: {
-    default: "Light",
+    default: "light",
     values: [
-      {name: "Light", value: "#ffffff", default: true},
-      {name: "Dark", value: "#000000"}
+      {name: "light", value: "#ffffff", default: true},
+      {name: "dark", value: "#000000"}
     ]
   },
   layout: "padded",
@@ -53,7 +50,7 @@ export const decorators = [
     }, [theme]);
 
     return (
-      <ThemeProvider theme={theme === "Light" ? lightTheme : darkTheme}>
+      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
         <Story {...context} />
         <GlobalStyle />
       </ThemeProvider>

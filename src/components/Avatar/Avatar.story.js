@@ -12,10 +12,10 @@ const Template = (args) => <Avatar {...args}></Avatar>;
 export const Image = Template.bind({});
 Image.args = {
   image: ProfileImage,
-  alt: "Jenya Armen"
+  alt: "Jane Nguyen"
 };
 
 export const Fallback = Template.bind({});
 Fallback.args = {
-  text: "JA"
+  text: "JN"
 };
