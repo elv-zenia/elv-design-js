@@ -4,84 +4,6 @@ import styled from "styled-components";
 import SVG from "react-inlinesvg";
 const classNames = require("classnames");
 
-const StyledButton = styled.button`
-  color: ${({theme}) => theme.textPrimaryColor};
-  border-radius: 5px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
-  padding: 8px 16px;
-  font-size: ${({theme}) => theme.buttonFontSize};
-  max-width: 20rem;
-  min-height: 2rem;
-  width: max-content;
-  transition: 0.3s;
-  
-  &:hover:not(:disabled) {
-    opacity: 80%;
-  }
-  
-  &:disabled {
-    cursor: not-allowed;
-    opacity: 40%;
-  }
-  
-  ${({variant, theme}) =>
-  variant === "primary" &&
-  `
-    background: ${theme.buttonPrimaryBg};
-    color: ${theme.buttonPrimaryTextColor};
-  `
-  }};
-
-  ${({variant, theme}) =>
-    variant === "secondary" &&
-    `
-      background: ${theme.buttonSecondaryBg};
-      border-color: ${theme.buttonSecondaryBorder};
-      color: ${theme.buttonSecondaryTextColor};
-    `
-  };
-  
-  ${({variant, theme}) =>
-    variant === "danger" &&
-    `
-      background: ${theme.buttonDangerBg};
-      color: ${theme.buttonDangerTextColor};
-    `
-  };
-
-  ${({variant}) =>
-    variant === "ghost" &&
-    `
-      background: none;
-      
-      &:hover:not(:disabled) {
-        background: rgba(0, 0, 0, 10%);
-      }
-    `
-  }
-  
-  ${({fullWidth}) => fullWidth &&
-    `
-      border-radius: 5px;
-      max-width: 100%;
-      width: 100%;
-    `
-  };
-`;
-
-const IconButton = styled(StyledButton)`
-  min-height: 43px;
-  padding-left: 0.8rem;
-  padding-right: 0.8rem;
-  
-  .elv-button--svg {
-    height: 1rem;
-    width: 1rem;
-  }
-`;
-
 const Button = React.forwardRef(({
   children,
   className,
@@ -126,6 +48,75 @@ const Button = React.forwardRef(({
     );
   }
 });
+
+const StyledButton = styled.button`
+  color: ${({theme}) => theme.textPrimaryColor};
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  padding: 8px 16px;
+  font-size: ${({theme}) => theme.buttonFontSize};
+  max-width: 20rem;
+  min-height: 2rem;
+  width: max-content;
+  transition: 0.3s;
+  
+  &:hover:not(:disabled) {
+    opacity: 80%;
+  }
+  
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 40%;
+  }
+  
+  ${({variant, theme}) =>
+  (variant === "primary" &&
+    `
+    background: ${theme.buttonPrimaryBg};
+    color: ${theme.buttonPrimaryTextColor};
+  `) ||
+  (variant === "secondary" &&
+    `
+    background: ${theme.buttonSecondaryBg};
+    border-color: ${theme.buttonSecondaryBorder};
+    color: ${theme.buttonSecondaryTextColor};
+  `) ||
+  (variant === "danger" &&
+    `
+    background: ${theme.buttonDangerBg};
+    color: ${theme.buttonDangerTextColor};
+  `) ||
+  (variant === "ghost" &&
+    `
+    background: none;
+    
+    &:hover:not(:disabled) {
+    background: rgba(0, 0, 0, 10%);
+    }
+  `)
+};
+  
+  ${({fullWidth}) => fullWidth &&
+  `
+      border-radius: 5px;
+      max-width: 100%;
+      width: 100%;
+    `
+};
+`;
+
+const IconButton = styled(StyledButton)`
+  min-height: 43px;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  
+  .elv-button--svg {
+    height: 1rem;
+    width: 1rem;
+  }
+`;
 
 Button.propTypes = {
   /**

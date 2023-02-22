@@ -34,7 +34,7 @@ ImageIcon.propTypes = {
   /**
    * The icon string to use
    */
-  icon: PropTypes.string,
+  icon: PropTypes.string.isRequired,
 
   /**
    * An icon that is displayed in the event of an error

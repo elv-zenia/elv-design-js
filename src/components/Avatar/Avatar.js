@@ -3,6 +3,21 @@ import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
+const Avatar = ({text, image, alt}) => {
+  const AvatarRoot = StyledAvatar;
+  const AvatarImage = StyledImage;
+  const AvatarFallback = StyledFallback;
+
+  return (
+    <div>
+      <AvatarRoot>
+        <AvatarImage src={image} alt={alt} />
+        <AvatarFallback>{ text }</AvatarFallback>
+      </AvatarRoot>
+    </div>
+  );
+};
+
 const StyledAvatar = styled(AvatarPrimitive.Root)`
   overflow: hidden;
   width: 45px;
@@ -32,21 +47,6 @@ const StyledFallback = styled(AvatarPrimitive.Fallback)`
   justify-content: center;
   line-height: 1;
 `;
-
-const Avatar = ({text, image, alt}) => {
-  const AvatarRoot = StyledAvatar;
-  const AvatarImage = StyledImage;
-  const AvatarFallback = StyledFallback;
-
-  return (
-    <div>
-      <AvatarRoot>
-        <AvatarImage src={image} alt={alt} />
-        <AvatarFallback>{ text }</AvatarFallback>
-      </AvatarRoot>
-    </div>
-  );
-};
 
 Avatar.propTypes = {
   /**

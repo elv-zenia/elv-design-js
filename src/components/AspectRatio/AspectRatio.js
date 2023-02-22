@@ -3,12 +3,6 @@ import styled from "styled-components";
 import * as AspectRatioPrimitive from "@radix-ui/react-aspect-ratio";
 import PropTypes from "prop-types";
 
-const Wrapper = styled.div`
-  border-radius: 12px;
-  overflow: hidden;
-  width: ${({width}) => `${width}px`};
-`;
-
 const AspectRatio = ({
   image,
   title,
@@ -33,11 +27,17 @@ const AspectRatio = ({
   );
 };
 
+const Wrapper = styled.div`
+  border-radius: 12px;
+  overflow: hidden;
+  width: ${({width}) => `${width}px`};
+`;
+
 AspectRatio.propTypes = {
   /**
    * A url to load an image from.
    */
-  image: PropTypes.node,
+  image: PropTypes.node.isRequired,
 
   /**
    * Alternative text to describe the aspect ratio.

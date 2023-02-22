@@ -5,6 +5,19 @@ import PropTypes from "prop-types";
 import CheckIcon from "../../static/icons/check.svg";
 import ImageIcon from "../ImageIcon/ImageIcon";
 
+const Checkbox = ({label}) => {
+  return (
+    <Flex>
+      <CheckboxRoot id="checkbox1">
+        <CheckboxIndicator>
+          <ImageIcon icon={CheckIcon} className="check-icon" />
+        </CheckboxIndicator>
+      </CheckboxRoot>
+      <StyledLabel htmlFor="checkbox1">{ label }</StyledLabel>
+    </Flex>
+  );
+};
+
 const StyledCheckbox = styled(CheckboxPrimitive.Root)`
   width: 1.25rem;
   height: 1.25rem;
@@ -44,24 +57,11 @@ const StyledLabel = styled.label`
   color: ${({theme}) => theme.labelColor};
 `;
 
-const Checkbox = ({label}) => {
-  return (
-    <Flex>
-      <CheckboxRoot id="checkbox1">
-        <CheckboxIndicator>
-          <ImageIcon icon={CheckIcon} className="check-icon" />
-        </CheckboxIndicator>
-      </CheckboxRoot>
-      <StyledLabel htmlFor="checkbox1">{ label }</StyledLabel>
-    </Flex>
-  );
-};
-
 Checkbox.propTypes = {
   /**
    * The label to be displayed beside the checkbox.
    */
-  label: PropTypes.string
+  label: PropTypes.string.isRequired
 };
 
 export default Checkbox;
