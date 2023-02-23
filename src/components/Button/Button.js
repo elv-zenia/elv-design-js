@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import SVG from "react-inlinesvg";
-const classNames = require("classnames");
+import ImageIcon from "../ImageIcon";
 
 const Button = React.forwardRef(({
   children,
@@ -12,36 +11,54 @@ const Button = React.forwardRef(({
   icon,
   iconOnly=false,
   fullWidth=false,
-  onClick
+  onClick,
+  ...rest
 }, ref) => {
-  const buttonClasses = classNames(className, {
-    "elv-button": true,
-  });
 
   if(iconOnly) {
     return (
-      <IconButton
-        className={buttonClasses}
+      <StyledIconButton
+        className={className}
         icon={icon}
         disabled={disabled}
         variant={variant}
         type="button"
         innerRef={ref}
         onClick={onClick}
+        {...rest}
       >
-        <SVG className="elv-button--svg" src={icon} />
-      </IconButton>
+        <StyledImageIcon icon={icon} />
+      </StyledIconButton>
     );
-  } else {
+  } else if(icon) {
     return (
       <StyledButton
-        className={buttonClasses}
+        className={className}
         disabled={disabled}
         variant={variant}
         type="button"
         fullWidth={fullWidth}
         innerRef={ref}
         onClick={onClick}
+        {...rest}
+      >
+        <Flex>
+          <StyledImageIcon icon={icon} />
+          { children }
+        </Flex>
+      </StyledButton>
+    );
+  } else {
+    return (
+      <StyledButton
+        className={className}
+        disabled={disabled}
+        variant={variant}
+        type="button"
+        fullWidth={fullWidth}
+        innerRef={ref}
+        onClick={onClick}
+        {...rest}
       >
         { children }
       </StyledButton>
@@ -74,48 +91,54 @@ const StyledButton = styled.button`
   ${({variant, theme}) =>
   (variant === "primary" &&
     `
-    background: ${theme.buttonPrimaryBg};
-    color: ${theme.buttonPrimaryTextColor};
-  `) ||
+      background: ${theme.buttonPrimaryBg};
+      color: ${theme.buttonPrimaryTextColor};
+    `) ||
   (variant === "secondary" &&
     `
-    background: ${theme.buttonSecondaryBg};
-    border-color: ${theme.buttonSecondaryBorder};
-    color: ${theme.buttonSecondaryTextColor};
-  `) ||
+      background: ${theme.buttonSecondaryBg};
+      border-color: ${theme.buttonSecondaryBorder};
+      color: ${theme.buttonSecondaryTextColor};
+    `) ||
   (variant === "danger" &&
     `
-    background: ${theme.buttonDangerBg};
-    color: ${theme.buttonDangerTextColor};
-  `) ||
+      background: ${theme.buttonDangerBg};
+      color: ${theme.buttonDangerTextColor};
+    `) ||
   (variant === "ghost" &&
     `
-    background: none;
-    
-    &:hover:not(:disabled) {
-    background: rgba(0, 0, 0, 10%);
-    }
-  `)
+      background: none;
+      
+      &:hover:not(:disabled) {
+      background: rgba(0, 0, 0, 10%);
+      }
+    `)
 };
   
   ${({fullWidth}) => fullWidth &&
-  `
+    `
       border-radius: 5px;
       max-width: 100%;
       width: 100%;
     `
-};
+  };
 `;
 
-const IconButton = styled(StyledButton)`
+const StyledIconButton = styled(StyledButton)`
   min-height: 43px;
   padding-left: 0.8rem;
   padding-right: 0.8rem;
-  
-  .elv-button--svg {
-    height: 1rem;
-    width: 1rem;
-  }
+`;
+
+const StyledImageIcon = styled(ImageIcon)`
+  height: 1rem;
+  width: 1rem;
+`;
+
+const Flex = styled("div")`
+  display: flex;
+  align-items: center;
+  gap: 5px;
 `;
 
 Button.propTypes = {

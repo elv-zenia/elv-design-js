@@ -1,5 +1,5 @@
 import React from "react";
-import CopyIcon from "../../static/icons/copy.svg";
+import {CopyIcon} from "../../static/icons/Icons";
 
 import Button from "./Button";
 
@@ -47,4 +47,10 @@ IconButton.args = {
   variant: "primary",
   icon: CopyIcon,
   iconOnly: true
+};
+
+export const TextIconButton = Template.bind({});
+TextIconButton.args = {
+  variant: "primary",
+  icon: CopyIcon,
 };

@@ -2,7 +2,7 @@ import React from "react";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import CheckIcon from "../../static/icons/check.svg";
+import {CheckIcon} from "../../static/icons/Icons";
 import ImageIcon from "../ImageIcon/ImageIcon";
 
 const Checkbox = ({label}) => {

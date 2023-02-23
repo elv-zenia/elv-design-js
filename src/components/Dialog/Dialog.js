@@ -3,7 +3,7 @@ import * as DialogPrimitive from "@radix-ui/react-dialog";
 import styled from "styled-components";
 import Button from "../Button/Button";
 import PropTypes from "prop-types";
-import CloseIcon from "../../static/icons/close.svg";
+import {CloseIcon} from "../../static/icons/Icons";
 
 const Dialog = ({
   open,
@@ -84,24 +84,24 @@ const StyledDialogContent = styled(DialogPrimitive.Content)`
   ${({size}) =>
   (size === "xs" &&
     `
-    max-height: 48%;
-    max-width: 24%;
-  `) ||
+      max-height: 48%;
+      max-width: 24%;
+    `) ||
   (size === "sm" &&
     `
-    max-height: 72%;
-    max-width: 36%;
-  `) ||
+      max-height: 72%;
+      max-width: 36%;
+    `) ||
   (size === "md" &&
     `
-    max-height: 84%;
-    max-width: 48%;
-  `) ||
+      max-height: 84%;
+      max-width: 48%;
+    `) ||
   (size === "lg" &&
     `
-    max-height: 96%;
-    max-width: 72%;
-  `)
+      max-height: 96%;
+      max-width: 72%;
+    `)
 }
 `;
 
