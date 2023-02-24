@@ -5,22 +5,24 @@ import PropTypes from "prop-types";
 
 const AspectRatio = ({
   image,
-  title,
+  alt,
   OnClick,
   ratio=(16 / 9),
-  width=300
+  width=300,
+  borderRadius=5,
+  className=""
 }) => {
   const AspectRatioRoot = AspectRatioPrimitive.Root;
   const [loading, setLoading] = useState(false);
 
   return (
-    <Wrapper onClick={OnClick} width={width}>
+    <Wrapper onClick={OnClick} width={width} borderRadius={borderRadius} className={className}>
       <AspectRatioRoot ratio={ratio}>
         <img
           className={`image-${loading ? "hidden" : "visible"}`}
           src={image}
           onLoad={() => setLoading(false)}
-          alt={title}
+          alt={alt}
         />
       </AspectRatioRoot>
     </Wrapper>
@@ -28,7 +30,7 @@ const AspectRatio = ({
 };
 
 const Wrapper = styled.div`
-  border-radius: 12px;
+  border-radius: ${({borderRadius}) => `${borderRadius}px`};
   overflow: hidden;
   width: ${({width}) => `${width}px`};
 `;
@@ -42,7 +44,7 @@ AspectRatio.propTypes = {
   /**
    * Alternative text to describe the aspect ratio.
    */
-  title: PropTypes.string,
+  alt: PropTypes.string,
 
   /**
    * Event handler called when the aspect ratio is clicked.
@@ -57,7 +59,17 @@ AspectRatio.propTypes = {
   /**
    * Defines the width of the aspect ratio.
    */
-  width: PropTypes.number
+  width: PropTypes.number,
+
+  /**
+   * Defines the border radius of the aspect ratio.
+   */
+  borderRadius: PropTypes.number,
+
+  /**
+   * An optional className to be added.
+   */
+  className: PropTypes.string
 };
 
 export default AspectRatio;

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import ImageIcon from "../ImageIcon";
 
 const Button = React.forwardRef(({
@@ -90,33 +90,33 @@ const StyledButton = styled.button`
   
   ${({variant, theme}) =>
   (variant === "primary" &&
-    `
+    css`
       background: ${theme.buttonPrimaryBg};
       color: ${theme.buttonPrimaryTextColor};
     `) ||
   (variant === "secondary" &&
-    `
+    css`
       background: ${theme.buttonSecondaryBg};
       border-color: ${theme.buttonSecondaryBorder};
       color: ${theme.buttonSecondaryTextColor};
     `) ||
   (variant === "danger" &&
-    `
+    css`
       background: ${theme.buttonDangerBg};
       color: ${theme.buttonDangerTextColor};
     `) ||
   (variant === "ghost" &&
-    `
+    css`
       background: none;
       
       &:hover:not(:disabled) {
-      background: rgba(0, 0, 0, 10%);
+        color: ${theme.buttonGhostHover}
       }
     `)
 };
   
   ${({fullWidth}) => fullWidth &&
-    `
+    css`
       border-radius: 5px;
       max-width: 100%;
       width: 100%;
@@ -135,7 +135,7 @@ const StyledImageIcon = styled(ImageIcon)`
   width: 1rem;
 `;
 
-const Flex = styled("div")`
+const Flex = styled.div`
   display: flex;
   align-items: center;
   gap: 5px;
@@ -148,7 +148,7 @@ Button.propTypes = {
   children: PropTypes.node,
 
   /**
-   * An optional className to be added to the button.
+   * An optional className to be added.
    */
   className: PropTypes.string,
 

@@ -2,7 +2,7 @@ import AspectRatio from "./components/AspectRatio";
 import Avatar from "./components/Avatar";
 import Button from "./components/Button";
 import Checkbox from "./components/Checkbox";
-import Dialog from "./components/Dialog";
+import Modal from "./components/Modal";
 import Dropdown from "./components/Dropdown";
 import ImageIcon from "./components/ImageIcon";
 import Label from "./components/Label";
@@ -15,7 +15,7 @@ export {
   Avatar,
   Button,
   Checkbox,
-  Dialog,
+  Modal,
   Dropdown,
   ImageIcon,
   Label,

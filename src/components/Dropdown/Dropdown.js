@@ -4,7 +4,7 @@ import styled from "styled-components";
 import {CheckIcon, ChevronDownIcon} from "@radix-ui/react-icons";
 import PropTypes from "prop-types";
 
-const Dropdown = ({items=[], placeholder="Select an option"}) => {
+const Dropdown = ({items=[], placeholder="Select an option", className=""}) => {
   const SelectRoot = SelectPrimitive.Root;
   const SelectTrigger = StyledTrigger;
   const SelectIcon = SelectPrimitive.SelectIcon;
@@ -17,7 +17,7 @@ const Dropdown = ({items=[], placeholder="Select an option"}) => {
   const SelectItemIndicator = SelectPrimitive.ItemIndicator;
 
   return (
-    <SelectRoot>
+    <SelectRoot className={className}>
       <SelectTrigger>
         <SelectValue placeholder={placeholder} />
         <SelectIcon>
@@ -117,7 +117,12 @@ Dropdown.propTypes = {
   /**
    * Placeholder text to display when no value has been selected.
    */
-  placeholder: PropTypes.string
+  placeholder: PropTypes.string,
+
+  /**
+   * An optional className to be added.
+   */
+  className: PropTypes.string
 };
 
 export default Dropdown;

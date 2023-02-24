@@ -37,38 +37,38 @@ const StyledSVG = styled(SVG)`
   ${dimensionStyles};
 `;
 
-const StyledImage = styled("img")`
+const StyledImage = styled.img`
   ${dimensionStyles}
 `;
 
 ImageIcon.propTypes = {
   /**
-   * The icon string to use
+   * The icon string to use.
    */
   icon: PropTypes.string.isRequired,
 
   /**
-   * An icon that is displayed in the event of an error
+   * An icon that is displayed in the event of an error.
    */
   alternateIcon: PropTypes.string,
 
   /**
-   * Any additional class names to use
+   * An optional class name to be added.
    */
   className: PropTypes.string,
 
   /**
-   * Alternative text to describe the icon
+   * Alternative text to describe the icon.
    */
   alt: PropTypes.string,
 
   /**
-   * Title text for the icon
+   * Title text for the icon.
    */
   title: PropTypes.string,
 
   /**
-   * Additional props
+   * Additional props.
    */
   props: PropTypes.object
 };

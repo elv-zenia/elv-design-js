@@ -3,18 +3,16 @@ import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-const Avatar = ({text, image, alt}) => {
+const Avatar = ({text, image, alt, className=""}) => {
   const AvatarRoot = StyledAvatar;
   const AvatarImage = StyledImage;
   const AvatarFallback = StyledFallback;
 
   return (
-    <div>
-      <AvatarRoot>
-        <AvatarImage src={image} alt={alt} />
-        <AvatarFallback>{ text }</AvatarFallback>
-      </AvatarRoot>
-    </div>
+    <AvatarRoot className={className}>
+      <AvatarImage src={image} alt={alt} />
+      <AvatarFallback>{ text }</AvatarFallback>
+    </AvatarRoot>
   );
 };
 
@@ -62,7 +60,12 @@ Avatar.propTypes = {
   /**
    * Alternative text to describe the avatar.
    */
-  alt: PropTypes.string
+  alt: PropTypes.string,
+
+  /**
+   * An optional className to be added.
+   */
+  className: PropTypes.string
 };
 
 export default Avatar;

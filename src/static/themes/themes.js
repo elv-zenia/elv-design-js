@@ -18,6 +18,7 @@ export const lightTheme = {
   buttonSecondaryBorder: dark[10],
   buttonDangerBg: temp[10],
   buttonDangerTextColor: neutral[10],
+  buttonGhostHover: dark[40],
   buttonFontSize: typeScale.button1,
   //
   //
@@ -25,16 +26,24 @@ export const lightTheme = {
   //
   checkboxBg: neutral[10],
   checkboxBorder: neutral[30],
-  checkboxIcon: dark[10],
+  checkboxIcon: neutral[10],
   checkboxFocus: purple[20],
+  checkboxCheckedBg: purple[10],
+  //
+  // Dropdown Menu
+  //
+  dropdownMenuBg: neutral[10],
+  dropdownMenuHighlight: neutral[20],
+  dropdownMenuBoxShadow: rgb[30],
+  dropdownMenuBoxShadowSecond: rgb[40],
   //
   //
-  // Dialog
+  // Modal
   //
-  dialogBg: neutral[10],
-  dialogTextColor: dark[10],
-  dialogBoxShadow: rgb[30],
-  dialogOverlayBg: rgb[10],
+  modalBg: neutral[10],
+  modalTextColor: dark[10],
+  modalBoxShadow: rgb[30],
+  modalOverlayBg: rgb[10],
   //
   // Font Face
   //
@@ -72,13 +81,20 @@ export const darkTheme = {
   checkboxIcon: dark[10],
   checkboxFocus: purple[10],
   //
+  // Dropdown Menu
   //
-  // Dialog
+  dropdownMenuBg: neutral[10],
+  dropdownMenuHighlight: neutral[20],
+  dropdownMenuBoxShadow: rgb[30],
+  dropdownMenuBoxShadowSecond: rgb[40],
   //
-  dialogBg: gradient[20],
-  dialogTextColor: neutral[10],
-  dialogBoxShadow: rgb[30],
-  dialogOverlayBg: rgb[20],
+  //
+  // Modal
+  //
+  modalBg: gradient[20],
+  modalTextColor: neutral[10],
+  modalBoxShadow: rgb[30],
+  modalOverlayBg: rgb[20],
   //
   // Font Face
   //

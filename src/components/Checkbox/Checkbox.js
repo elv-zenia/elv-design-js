@@ -4,16 +4,17 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import {CheckIcon} from "../../static/icons/Icons";
 import ImageIcon from "../ImageIcon/ImageIcon";
+import Label from "../Label";
 
-const Checkbox = ({label}) => {
+const Checkbox = ({label, className=""}) => {
   return (
-    <Flex>
+    <Flex className={className}>
+      <StyledLabel htmlFor="checkbox1" label={label} />
       <CheckboxRoot id="checkbox1">
         <CheckboxIndicator>
           <ImageIcon icon={CheckIcon} className="check-icon" />
         </CheckboxIndicator>
       </CheckboxRoot>
-      <StyledLabel htmlFor="checkbox1">{ label }</StyledLabel>
     </Flex>
   );
 };
@@ -32,10 +33,14 @@ const StyledCheckbox = styled(CheckboxPrimitive.Root)`
     box-shadow: ${({theme}) => `0 0 0 2px ${theme.checkboxFocus}`};
   }
   
+  &[data-state="checked"] {
+    background-color: ${({theme}) => theme.checkboxCheckedBg};
+  }
+  
   .check-icon {
     display: block;
-    width: 0.675rem;
-    height: 0.675rem;
+    width: 100%;
+    height: 100%;
   }
 `;
 
@@ -49,11 +54,11 @@ const CheckboxIndicator = StyledIndicator;
 const Flex = styled.div`
   display: flex;
   align-items: center;
+  gap: 0.675rem;
 `;
 
-const StyledLabel = styled.label`
+const StyledLabel = styled(Label)`
   line-height: 1;
-  padding-left: 0.675rem;
   color: ${({theme}) => theme.labelColor};
 `;
 
@@ -61,7 +66,12 @@ Checkbox.propTypes = {
   /**
    * The label to be displayed beside the checkbox.
    */
-  label: PropTypes.string.isRequired
+  label: PropTypes.string.isRequired,
+
+  /**
+   * An optional className to be added.
+   */
+  className: PropTypes.string
 };
 
 export default Checkbox;
