@@ -2,6 +2,7 @@ import React from "react";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import {menuContent, menuItem} from "../shared-styles";
 
 const DropdownMenu = ({open, onOpenChange, trigger, items=[], className=""}) => {
   const DropdownMenuRoot = DropdownMenuPrimitive.Root;
@@ -28,34 +29,17 @@ const StyledDropdownMenuContent = styled(DropdownMenuPrimitive.Content)`
   --radix-popper-available-width: 88px;
   --radix-popper-available-height: 676px;
   --radix-popper-transform-origin: 50% 0px;
-  min-width: 220px;
-  background-color: ${({theme}) => theme.dropdownMenuBg};
-  box-shadow: ${({theme}) => `0px 10px 38px -10px ${theme.dropdownMenuBoxShadow}, 0px 10px 20px -15px ${theme.dropdownMenuBoxShadowSecond}`};
-  padding: 5px;
+  padding: 10px 0;
   position: fixed;
   left: 0px;
   top: 0px;
   transform: translate3d(0px, 59px, 0px);
   z-index: auto;
+  ${menuContent}
 `;
 
 const StyledDropdownMenuItem = styled(DropdownMenuPrimitive.Item)`
-  line-height: 1;
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-  height: 25px;
-  padding: 0 5px;
-
-  &[data-disabled] {
-    color: lightgray;
-    pointer-events: none;
-  }
-
-  &[data-highlighted] {
-    background-color: ${({theme}) => theme.dropdownMenuHighlight};
-    outline-color: ${({theme}) => theme.dropdownMenuHighlight};
-  }
+  ${menuItem}
 `;
 
 DropdownMenu.propTypes = {

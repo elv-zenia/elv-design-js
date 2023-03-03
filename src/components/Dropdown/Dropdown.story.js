@@ -10,6 +10,7 @@ const Template = (args) => <Dropdown {...args}></Dropdown>;
 
 export const Default = Template.bind({});
 Default.args = {
+  label: "Menu Items",
   items: [
     {label: "Option 1", value: "1"},
     {label: "Option 2 - a disabled item", value: "2", disabled: true},

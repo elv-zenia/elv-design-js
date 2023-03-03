@@ -3,8 +3,9 @@ import * as SelectPrimitive from "@radix-ui/react-select";
 import styled from "styled-components";
 import {CheckIcon, ChevronDownIcon} from "@radix-ui/react-icons";
 import PropTypes from "prop-types";
+import {menuContent, menuItem} from "../shared-styles";
 
-const Dropdown = ({items=[], placeholder="Select an option", className=""}) => {
+const Dropdown = ({label, items=[], placeholder="Select an option", className=""}) => {
   const SelectRoot = SelectPrimitive.Root;
   const SelectTrigger = StyledTrigger;
   const SelectIcon = SelectPrimitive.SelectIcon;
@@ -14,15 +15,17 @@ const Dropdown = ({items=[], placeholder="Select an option", className=""}) => {
   const SelectValue = SelectPrimitive.Value;
   const SelectItem = StyledItem;
   const SelectItemText = SelectPrimitive.ItemText;
-  const SelectItemIndicator = SelectPrimitive.ItemIndicator;
 
   return (
     <SelectRoot className={className}>
       <SelectTrigger>
-        <SelectValue placeholder={placeholder} />
-        <SelectIcon>
-          <ChevronDownIcon />
-        </SelectIcon>
+        { label && <TriggerLabel>{label}</TriggerLabel> }
+        <TriggerTextIconFlex>
+          <SelectValue placeholder={placeholder} />
+          <SelectIcon>
+            <ChevronDownIcon />
+          </SelectIcon>
+        </TriggerTextIconFlex>
       </SelectTrigger>
       <SelectPortal>
         <SelectContent>
@@ -34,10 +37,10 @@ const Dropdown = ({items=[], placeholder="Select an option", className=""}) => {
                   disabled={disabled}
                   key={`dropdown-item-${value}`}
                 >
-                  <SelectItemText>{ label }</SelectItemText>
-                  <SelectItemIndicator>
+                  <StyledItemIndicator>
                     <CheckIcon />
-                  </SelectItemIndicator>
+                  </StyledItemIndicator>
+                  <SelectItemText>{ label }</SelectItemText>
                 </SelectItem>
               ))
             }
@@ -50,58 +53,65 @@ const Dropdown = ({items=[], placeholder="Select an option", className=""}) => {
 
 const StyledTrigger = styled(SelectPrimitive.Trigger)`
   all: unset;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  padding: 0 15px;
+  display: flex;
+  border: ${({theme}) => `1px solid ${theme.dropdownBorder}`};
+  border-radius: 7px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  padding: 10px 15px;
   font-size: 14px;
   line-height: 1;
-  height: 35px;
-  gap: 5px;
-  box-shadow: 0 2px 5px lightgray;
+  min-height: 50px;
   
   &:hover {
     background-color: whitesmoke;
   }
   
   &:focus {
-    box-shadow: 0 0 0 2px black;
+    box-shadow: ${({theme}) => `0 0 0 2px ${theme.dropdownFocus}`};
   }
+`;
+
+const TriggerLabel = styled.div`
+  display: flex;
+  flex-basis: 100%;
+  font-size: 10px;
+  font-weight: 400;
+  padding-bottom: 0.25rem;
+  line-height: 0.5rem;
+  color: ${({theme}) => theme.dropdownLabel};
+`;
+
+const TriggerTextIconFlex = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  flex-basis: 100%;
 `;
 
 const StyledContent = styled(SelectPrimitive.Content)`
-  overflow: hidden;
-  background-color: white;
-  border-radius: 6px;
-  box-shadow: 0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+  padding: 5px 0;
+  ${menuContent}
 `;
 
 const StyledViewport = styled(SelectPrimitive.Viewport)`
-  padding: 5px;
+  padding: 5px 0;
 `;
 
 const StyledItem = styled(SelectPrimitive.Item)`
-  line-height: 1;
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-  height: 35px;
-  padding: 0 35px 0 25px;
-  font-size: 14px;
   position: relative;
   user-select: none;
-  
-  &[data-disabled] {
-    color: lightgray;
-    pointer-events: none;
-  }
-  
-  &[data-highlighted] {
-    outline: none;
-    background-color: steelblue;
-    color: white;
-  }
+  ${menuItem}
+`;
+
+const StyledItemIndicator = styled(SelectPrimitive.ItemIndicator)`
+  position: absolute;
+  left: 0;
+  width: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 Dropdown.propTypes = {

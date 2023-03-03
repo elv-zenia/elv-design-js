@@ -30,6 +30,12 @@ export const lightTheme = {
   checkboxFocus: purple[20],
   checkboxCheckedBg: purple[10],
   //
+  // Dropdown
+  //
+  dropdownBorder: neutral[20],
+  dropdownFocus: purple[10],
+  dropdownLabel: neutral[30],
+  //
   // Dropdown Menu
   //
   dropdownMenuBg: neutral[10],
@@ -45,6 +51,11 @@ export const lightTheme = {
   modalBoxShadow: rgb[30],
   modalOverlayBg: rgb[10],
   //
+  // Radio
+  //
+  radioBorder: dark[10],
+  radioIndicatorBg: dark[10],
+  //
   // Font Face
   //
   fontPrimary: primaryFont,
@@ -55,7 +66,8 @@ export const lightTheme = {
   //
   // Text
   //
-  textPrimaryColor: dark[10]
+  textPrimaryColor: dark[10],
+  textDisabled: neutral[20]
 };
 
 export const darkTheme = {
@@ -81,6 +93,12 @@ export const darkTheme = {
   checkboxIcon: dark[10],
   checkboxFocus: purple[10],
   //
+  // Dropdown
+  //
+  dropdownBorder: neutral[10],
+  dropdownFocus: purple[10],
+  dropdownLabel: neutral[30],
+  //
   // Dropdown Menu
   //
   dropdownMenuBg: neutral[10],
@@ -96,6 +114,11 @@ export const darkTheme = {
   modalBoxShadow: rgb[30],
   modalOverlayBg: rgb[20],
   //
+  // Radio
+  //
+  radioBorder: neutral[10],
+  radioIndicatorBg: neutral[10],
+  //
   // Font Face
   //
   fontPrimary: primaryFont,
@@ -106,5 +129,6 @@ export const darkTheme = {
   //
   // Text
   //
-  textPrimaryColor: neutral[10]
+  textPrimaryColor: neutral[10],
+  textDisabled: neutral[20]
 };

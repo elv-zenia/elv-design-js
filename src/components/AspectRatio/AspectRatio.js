@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components";
 import * as AspectRatioPrimitive from "@radix-ui/react-aspect-ratio";
 import PropTypes from "prop-types";
@@ -6,22 +6,18 @@ import PropTypes from "prop-types";
 const AspectRatio = ({
   image,
   alt,
-  OnClick,
   ratio=(16 / 9),
   width=300,
   borderRadius=5,
   className=""
 }) => {
   const AspectRatioRoot = AspectRatioPrimitive.Root;
-  const [loading, setLoading] = useState(false);
 
   return (
-    <Wrapper onClick={OnClick} width={width} borderRadius={borderRadius} className={className}>
+    <Wrapper width={width} borderRadius={borderRadius} className={className}>
       <AspectRatioRoot ratio={ratio}>
-        <img
-          className={`image-${loading ? "hidden" : "visible"}`}
+        <Img
           src={image}
-          onLoad={() => setLoading(false)}
           alt={alt}
         />
       </AspectRatioRoot>
@@ -35,6 +31,12 @@ const Wrapper = styled.div`
   width: ${({width}) => `${width}px`};
 `;
 
+const Img = styled.img`
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+`;
+
 AspectRatio.propTypes = {
   /**
    * A url to load an image from.
@@ -45,11 +47,6 @@ AspectRatio.propTypes = {
    * Alternative text to describe the aspect ratio.
    */
   alt: PropTypes.string,
-
-  /**
-   * Event handler called when the aspect ratio is clicked.
-   */
-  OnClick: PropTypes.func,
 
   /**
    * Defines the ratio of the aspect ratio.
