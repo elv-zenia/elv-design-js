@@ -27,3 +27,26 @@ export const menuItem = css`
     background-color: ${({theme}) => theme.dropdownMenuHighlight};
   }
 `;
+
+export const dropdownItem = css`
+  min-height: 50px;
+  line-height: 1;
+  padding: 10px 15px;
+`;
+
+export const formItem = css`
+  font-size: 14px;
+  border: ${({theme}) => `1px solid ${theme.formItemBorder}`};
+  border-radius: 7px;
+  box-sizing: border-box;
+`;
+
+export const formItemLabel = css`
+  display: flex;
+  flex-basis: 100%;
+  font-size: 10px;
+  font-weight: 400;
+  padding-bottom: 0.25rem;
+  line-height: 0.5rem;
+  color: ${({theme}) => theme.formItemLabel};
+`;

@@ -4,7 +4,7 @@ import {MenuIcon} from "../../static/icons/Icons";
 import Button from "../Button";
 
 export default {
-  title: "Components/DropdownMenu",
+  title: "Components/Dropdown Menu",
   component: DropdownMenu
 };
 

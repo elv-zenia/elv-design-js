@@ -2,7 +2,7 @@ import React from "react";
 import {RadioGroup} from "./Radio";
 
 export default {
-  title: "Components/RadioGroup",
+  title: "Components/Radio Group",
   component: RadioGroup
 };
 

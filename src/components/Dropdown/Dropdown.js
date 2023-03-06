@@ -3,7 +3,7 @@ import * as SelectPrimitive from "@radix-ui/react-select";
 import styled from "styled-components";
 import {CheckIcon, ChevronDownIcon} from "@radix-ui/react-icons";
 import PropTypes from "prop-types";
-import {menuContent, menuItem} from "../shared-styles";
+import {dropdownItem, formItem, formItemLabel, menuContent, menuItem} from "../shared-styles";
 
 const Dropdown = ({label, items=[], placeholder="Select an option", className=""}) => {
   const SelectRoot = SelectPrimitive.Root;
@@ -54,14 +54,11 @@ const Dropdown = ({label, items=[], placeholder="Select an option", className=""
 const StyledTrigger = styled(SelectPrimitive.Trigger)`
   all: unset;
   display: flex;
-  border: ${({theme}) => `1px solid ${theme.dropdownBorder}`};
-  border-radius: 7px;
-  box-sizing: border-box;
+  
   flex-wrap: wrap;
-  padding: 10px 15px;
-  font-size: 14px;
-  line-height: 1;
-  min-height: 50px;
+  
+  ${formItem};
+  ${dropdownItem};
   
   &:hover {
     background-color: whitesmoke;
@@ -73,13 +70,7 @@ const StyledTrigger = styled(SelectPrimitive.Trigger)`
 `;
 
 const TriggerLabel = styled.div`
-  display: flex;
-  flex-basis: 100%;
-  font-size: 10px;
-  font-weight: 400;
-  padding-bottom: 0.25rem;
-  line-height: 0.5rem;
-  color: ${({theme}) => theme.dropdownLabel};
+  ${formItemLabel};
 `;
 
 const TriggerTextIconFlex = styled.div`

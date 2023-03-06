@@ -32,9 +32,7 @@ export const lightTheme = {
   //
   // Dropdown
   //
-  dropdownBorder: neutral[20],
   dropdownFocus: purple[10],
-  dropdownLabel: neutral[30],
   //
   // Dropdown Menu
   //
@@ -59,6 +57,11 @@ export const lightTheme = {
   // Font Face
   //
   fontPrimary: primaryFont,
+  //
+  // Form Item
+  //
+  formItemBorder: neutral[20],
+  formItemLabel: neutral[30],
   //
   // Label
   //
@@ -95,9 +98,7 @@ export const darkTheme = {
   //
   // Dropdown
   //
-  dropdownBorder: neutral[10],
   dropdownFocus: purple[10],
-  dropdownLabel: neutral[30],
   //
   // Dropdown Menu
   //
@@ -122,6 +123,11 @@ export const darkTheme = {
   // Font Face
   //
   fontPrimary: primaryFont,
+  //
+  // Form Item
+  //
+  formItemBorder: neutral[10],
+  formItemLabel: neutral[30],
   //
   // Label
   //

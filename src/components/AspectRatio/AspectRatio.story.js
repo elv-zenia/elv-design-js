@@ -3,7 +3,7 @@ import AspectRatio from "./AspectRatio";
 import AspectImage from "../../static/images/aspect-image.jpg";
 
 export default {
-  title: "Components/AspectRatio",
+  title: "Components/Aspect Ratio",
   component: AspectRatio
 };
 
