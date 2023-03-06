@@ -55,6 +55,13 @@ export const lightTheme = {
   radioBorder: dark[10],
   radioIndicatorBg: dark[10],
   //
+  // Toggle Group
+  //
+  toggleGroupBg: "transparent",
+  toggleGroupBorder: neutral[20],
+  toggleGroupSelectedBorder: purple[40],
+  toggleGroupSelectedTextColor: purple[40],
+  //
   // Tooltip
   //
   tooltipBg: neutral[20],
@@ -125,6 +132,13 @@ export const darkTheme = {
   //
   radioBorder: neutral[10],
   radioIndicatorBg: neutral[10],
+  //
+  // Toggle Group
+  //
+  toggleGroupBg: "transparent",
+  toggleGroupBorder: neutral[20],
+  toggleGroupSelectedBorder: purple[40],
+  toggleGroupSelectedTextColor: purple[40],
   //
   // Tooltip
   //

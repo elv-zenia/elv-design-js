@@ -1,7 +1,8 @@
 export const purple = {
   10: "#5c33ff",
   20: "#6833ff",
-  30: "#150651"
+  30: "#150651",
+  40: "#9B51E0"
 };
 
 export const pink = {
