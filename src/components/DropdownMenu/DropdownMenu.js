@@ -24,16 +24,7 @@ const DropdownMenu = ({open, onOpenChange, trigger, items=[], className=""}) => 
 };
 
 const StyledDropdownMenuContent = styled(DropdownMenuPrimitive.Content)`
-  --radix-popper-anchor-width: 43.5938px;
-  --radix-popper-anchor-height: 43px;
-  --radix-popper-available-width: 88px;
-  --radix-popper-available-height: 676px;
-  --radix-popper-transform-origin: 50% 0px;
   padding: 10px 0;
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  transform: translate3d(0px, 59px, 0px);
   z-index: auto;
   ${menuContent}
 `;

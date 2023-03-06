@@ -23,7 +23,7 @@ const Button = React.forwardRef(({
         disabled={disabled}
         variant={variant}
         type="button"
-        innerRef={ref}
+        ref={ref}
         onClick={onClick}
         {...rest}
       >
@@ -38,7 +38,7 @@ const Button = React.forwardRef(({
         variant={variant}
         type="button"
         fullWidth={fullWidth}
-        innerRef={ref}
+        ref={ref}
         onClick={onClick}
         {...rest}
       >
@@ -56,7 +56,7 @@ const Button = React.forwardRef(({
         variant={variant}
         type="button"
         fullWidth={fullWidth}
-        innerRef={ref}
+        ref={ref}
         onClick={onClick}
         {...rest}
       >

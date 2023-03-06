@@ -19,6 +19,7 @@ export const lightTheme = {
   buttonDangerBg: temp[10],
   buttonDangerTextColor: neutral[10],
   buttonGhostHover: dark[40],
+  buttonTooltipBg: neutral[20],
   buttonFontSize: typeScale.button1,
   //
   //
@@ -54,6 +55,10 @@ export const lightTheme = {
   radioBorder: dark[10],
   radioIndicatorBg: dark[10],
   //
+  // Tooltip
+  //
+  tooltipBg: neutral[20],
+  //
   // Font Face
   //
   fontPrimary: primaryFont,
@@ -87,6 +92,7 @@ export const darkTheme = {
   buttonSecondaryBg: gradient[20],
   buttonSecondaryBorder: neutral[30],
   buttonDangerBg: temp[10],
+  buttonTooltipBg: neutral[30],
   buttonFontSize: typeScale.button1,
   //
   // Checkbox
@@ -119,6 +125,10 @@ export const darkTheme = {
   //
   radioBorder: neutral[10],
   radioIndicatorBg: neutral[10],
+  //
+  // Tooltip
+  //
+  tooltipBg: neutral[10],
   //
   // Font Face
   //

@@ -4,12 +4,14 @@ import CopyIcon from "./copy.svg";
 import HomeIcon from "./home.svg";
 import PictureIcon from "./picture.svg";
 import MenuIcon from "./menu.svg";
+import QuestionIcon from "./question.svg";
 
 export {
   CheckIcon,
   CloseIcon,
   CopyIcon,
   HomeIcon,
+  MenuIcon,
   PictureIcon,
-  MenuIcon
+  QuestionIcon
 };
