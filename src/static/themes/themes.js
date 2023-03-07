@@ -55,6 +55,11 @@ export const lightTheme = {
   radioBorder: dark[10],
   radioIndicatorBg: dark[10],
   //
+  // Tabs
+  //
+  tabTextColor: purple[50],
+  tabSelectedBorder: purple[40],
+  //
   // Toggle Group
   //
   toggleGroupBg: "transparent",
@@ -139,6 +144,11 @@ export const darkTheme = {
   toggleGroupBorder: neutral[20],
   toggleGroupSelectedBorder: purple[40],
   toggleGroupSelectedTextColor: purple[40],
+  //
+  // Tabs
+  //
+  tabTextColor: purple[50],
+  tabSelectedBorder: purple[40],
   //
   // Tooltip
   //

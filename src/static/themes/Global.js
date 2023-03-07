@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-family: ${primaryFont};
+    color: ${({theme}) => theme.textPrimaryColor}
   }
 
   a {
