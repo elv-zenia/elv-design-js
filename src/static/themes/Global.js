@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-family: ${primaryFont};
-    color: ${({theme}) => theme.textPrimaryColor}
+    color: ${({theme}) => theme.textPrimaryColor};
   }
 
   a {
@@ -28,6 +28,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   input {
+    color: ${({theme}) => theme.textPrimaryColor};
+    
     &::-moz-focus-inner {
       border: 0;
       margin: 0;

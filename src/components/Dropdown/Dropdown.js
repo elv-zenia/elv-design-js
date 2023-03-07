@@ -60,10 +60,6 @@ const StyledTrigger = styled(SelectPrimitive.Trigger)`
   ${formItem};
   ${dropdownItem};
   
-  &:hover {
-    background-color: whitesmoke;
-  }
-  
   &:focus {
     box-shadow: ${({theme}) => `0 0 0 2px ${theme.dropdownFocus}`};
   }

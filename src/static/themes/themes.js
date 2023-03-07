@@ -42,7 +42,6 @@ export const lightTheme = {
   dropdownMenuBoxShadow: rgb[30],
   dropdownMenuBoxShadowSecond: rgb[40],
   //
-  //
   // Modal
   //
   modalBg: neutral[10],
@@ -54,6 +53,7 @@ export const lightTheme = {
   //
   radioBorder: dark[10],
   radioIndicatorBg: dark[10],
+  radioBg: "transparent",
   //
   // Tabs
   //
@@ -70,6 +70,11 @@ export const lightTheme = {
   // Tooltip
   //
   tooltipBg: neutral[20],
+
+  /**
+   * GLOBAL
+   */
+
   //
   // Font Face
   //
@@ -111,8 +116,9 @@ export const darkTheme = {
   //
   checkboxBg: neutral[10],
   checkboxBorder: neutral[20],
-  checkboxIcon: dark[10],
-  checkboxFocus: purple[10],
+  checkboxIcon: neutral[10],
+  checkboxFocus: purple[20],
+  checkboxCheckedBg: purple[10],
   //
   // Dropdown
   //
@@ -120,11 +126,10 @@ export const darkTheme = {
   //
   // Dropdown Menu
   //
-  dropdownMenuBg: neutral[10],
-  dropdownMenuHighlight: neutral[20],
+  dropdownMenuBg: dark[10],
+  dropdownMenuHighlight: dark[40],
   dropdownMenuBoxShadow: rgb[30],
   dropdownMenuBoxShadowSecond: rgb[40],
-  //
   //
   // Modal
   //
@@ -137,6 +142,7 @@ export const darkTheme = {
   //
   radioBorder: neutral[10],
   radioIndicatorBg: neutral[10],
+  radioBg: "transparent",
   //
   // Toggle Group
   //
@@ -152,7 +158,12 @@ export const darkTheme = {
   //
   // Tooltip
   //
-  tooltipBg: neutral[10],
+  tooltipBg: neutral[30],
+
+  /**
+   * GLOBAL
+   */
+
   //
   // Font Face
   //
@@ -161,7 +172,7 @@ export const darkTheme = {
   // Form Item
   //
   formItemBorder: neutral[10],
-  formItemLabel: neutral[30],
+  formItemLabel: neutral[20],
   //
   // Label
   //

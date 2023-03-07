@@ -70,6 +70,7 @@ const StyledRadioGroupItem = styled(RadioGroupPrimitive.Item)`
   height: 20px;
   border-radius: 100%;
   border: ${({theme}) => `1px solid ${theme.radioBorder}`};
+  background-color: ${({theme}) => theme.radioBg};
   
   &[data-disabled] {
     opacity: 30%;
