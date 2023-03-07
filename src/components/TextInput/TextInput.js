@@ -4,9 +4,9 @@ import {formItem, formItemLabel} from "../shared-styles";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-const TextInput = ({value, placeholder, label, width=400}) => {
+const TextInput = ({value, placeholder, label, width=400, ...rest}) => {
   return (
-    <InputContainer inputWidth={width}>
+    <InputContainer inputWidth={width} {...rest}>
       <LabelContainer>
         <StyledLabel label={label} />
       </LabelContainer>
@@ -40,7 +40,7 @@ const LabelContainer = styled.div`
 const StyledLabel = styled(Label)`
   position: absolute;
   top: 10px;
-  left: 15px;
+  left: 1rem;
   z-index: 1;
   display: flex;
   height: 1rem;
@@ -69,8 +69,7 @@ const StyledInput = styled.input`
   border: none;
   outline: none;
   min-height: 50px;
-  //padding: 2rem 1rem 0.8125rem;
-  padding: 24px 15px 10px;
+  padding: 1.5rem 1.025rem 10px;
   background: transparent;
   width: 100%;
 `;

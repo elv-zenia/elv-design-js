@@ -3,9 +3,9 @@ import * as LabelPrimitive from "@radix-ui/react-label";
 import PropTypes from "prop-types";
 import styled, {css} from "styled-components";
 
-const Label = ({label, htmlFor, className, disabled}) => {
+const Label = ({label, htmlFor, disabled, ...rest}) => {
   return (
-    <StyledLabel htmlFor={htmlFor} className={className} disabled={disabled}>{ label }</StyledLabel>
+    <StyledLabel htmlFor={htmlFor} disabled={disabled} {...rest}>{ label }</StyledLabel>
   );
 };
 
@@ -28,11 +28,6 @@ Label.propTypes = {
    * The id of the element the label is associated with.
    */
   htmlFor: PropTypes.string,
-
-  /**
-   * An optional className to be added.
-   */
-  className: PropTypes.string,
 
   /**
    * Parameter for setting disabled state styling.

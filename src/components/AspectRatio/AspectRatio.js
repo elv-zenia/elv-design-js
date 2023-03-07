@@ -9,12 +9,12 @@ const AspectRatio = ({
   ratio=(16 / 9),
   width=300,
   borderRadius=5,
-  className=""
+  ...rest
 }) => {
   const AspectRatioRoot = AspectRatioPrimitive.Root;
 
   return (
-    <Wrapper width={width} borderRadius={borderRadius} className={className}>
+    <Wrapper width={width} borderRadius={borderRadius} {...rest}>
       <AspectRatioRoot ratio={ratio}>
         <Img
           src={image}
@@ -61,12 +61,7 @@ AspectRatio.propTypes = {
   /**
    * Defines the border radius of the aspect ratio.
    */
-  borderRadius: PropTypes.number,
-
-  /**
-   * An optional className to be added.
-   */
-  className: PropTypes.string
+  borderRadius: PropTypes.number
 };
 
 export default AspectRatio;

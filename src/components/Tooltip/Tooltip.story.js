@@ -6,7 +6,15 @@ export default {
   component: Tooltip
 };
 
-const Template = (args) => <Tooltip {...args} />;
+const containerStyle = {
+  width: "50%",
+  height: "400px",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center"
+};
+
+const Template = (args) => <div style={containerStyle}><Tooltip {...args} /></div>;
 
 export const Default = Template.bind({});
 Default.args = {

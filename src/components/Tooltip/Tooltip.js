@@ -12,7 +12,8 @@ const Tooltip = ({
   align="center",
   side="top",
   open,
-  onOpenChange
+  onOpenChange,
+  ...rest
 }) => {
   const TooltipProvider = TooltipPrimitive.Provider;
   const TooltipRoot = TooltipPrimitive.Root;
@@ -20,7 +21,7 @@ const Tooltip = ({
   const TooltipPortal = TooltipPrimitive.Portal;
 
   return (
-    <TooltipProvider>
+    <TooltipProvider {...rest}>
       <TooltipRoot disableHoverableContent={true} open={open} onOpenChange={onOpenChange}>
         <TooltipTrigger asChild>
           <StyledButton type="button">
@@ -49,9 +50,9 @@ const StyledButton = styled.button`
 
 const StyledTooltipContent = styled(TooltipPrimitive.Content)`
   border-radius: 4px;
-  padding: 10px 15px;
+  padding: 10px 1rem;
   font-size: 15px;
-  line-height: 1;
+  line-height: 1rem;
   user-select: none;
   background-color: ${({theme}) => theme.tooltipBg};
   max-width: 18rem;

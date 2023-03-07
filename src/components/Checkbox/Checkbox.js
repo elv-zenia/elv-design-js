@@ -6,9 +6,9 @@ import {CheckIcon} from "../../static/icons/Icons";
 import ImageIcon from "../ImageIcon/ImageIcon";
 import Label from "../Label";
 
-const Checkbox = ({label, className=""}) => {
+const Checkbox = ({label, ...rest}) => {
   return (
-    <Flex className={className}>
+    <Flex {...rest}>
       <StyledLabel htmlFor="checkbox1" label={label} />
       <CheckboxRoot id="checkbox1">
         <CheckboxIndicator>
@@ -58,7 +58,7 @@ const Flex = styled.div`
 `;
 
 const StyledLabel = styled(Label)`
-  line-height: 1;
+  line-height: 1rem;
   color: ${({theme}) => theme.labelColor};
 `;
 
@@ -66,12 +66,7 @@ Checkbox.propTypes = {
   /**
    * The label to be displayed beside the checkbox.
    */
-  label: PropTypes.string.isRequired,
-
-  /**
-   * An optional className to be added.
-   */
-  className: PropTypes.string
+  label: PropTypes.string.isRequired
 };
 
 export default Checkbox;

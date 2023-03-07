@@ -4,13 +4,13 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import {menuContent, menuItem} from "../shared-styles";
 
-const DropdownMenu = ({open, onOpenChange, trigger, items=[], className=""}) => {
+const DropdownMenu = ({open, onOpenChange, trigger, items=[], ...rest}) => {
   const DropdownMenuRoot = DropdownMenuPrimitive.Root;
   const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
   const DropdownMenuPortal = DropdownMenuPrimitive.Portal;
 
   return (
-    <DropdownMenuRoot open={open} onOpenChange={onOpenChange} className={className}>
+    <DropdownMenuRoot open={open} onOpenChange={onOpenChange} {...rest}>
       <DropdownMenuTrigger asChild>{ trigger }</DropdownMenuTrigger>
       <DropdownMenuPortal>
         <StyledDropdownMenuContent>
@@ -55,12 +55,7 @@ DropdownMenu.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     disabled: PropTypes.bool
-  })),
-
-  /**
-   * An optional className to be added.
-   */
-  className: PropTypes.string
+  }))
 };
 
 export default DropdownMenu;

@@ -5,7 +5,6 @@ import ImageIcon from "../ImageIcon";
 
 const Button = React.forwardRef(({
   children,
-  className,
   disabled=false,
   variant="primary",
   icon,
@@ -18,7 +17,6 @@ const Button = React.forwardRef(({
   if(iconOnly) {
     return (
       <StyledIconButton
-        className={className}
         icon={icon}
         disabled={disabled}
         variant={variant}
@@ -33,7 +31,6 @@ const Button = React.forwardRef(({
   } else if(icon) {
     return (
       <StyledButton
-        className={className}
         disabled={disabled}
         variant={variant}
         type="button"
@@ -51,7 +48,6 @@ const Button = React.forwardRef(({
   } else {
     return (
       <StyledButton
-        className={className}
         disabled={disabled}
         variant={variant}
         type="button"
@@ -69,10 +65,10 @@ const Button = React.forwardRef(({
 const StyledButton = styled.button`
   color: ${({theme}) => theme.textPrimaryColor};
   border-radius: 5px;
-  border-width: 1px;
+  border-width: 5px;
   border-style: solid;
   border-color: transparent;
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   font-size: ${({theme}) => theme.buttonFontSize};
   max-width: 20rem;
   min-height: 2rem;
@@ -146,11 +142,6 @@ Button.propTypes = {
    * The content of the button.
    */
   children: PropTypes.node,
-
-  /**
-   * An optional className to be added.
-   */
-  className: PropTypes.string,
 
   /**
    * Determines the disabled state.

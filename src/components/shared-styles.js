@@ -9,13 +9,13 @@ export const menuContent = css`
 `;
 
 export const menuItem = css`
-  font-size: 14px;
-  line-height: 1;
+  font-size: 0.875rem;
+  line-height: 1rem;
   border-radius: 3px;
   display: flex;
   align-items: center;
   height: 35px;
-  padding: 0 20px;
+  padding: 0 1.5rem;
 
   &[data-disabled] {
     color: lightgray;
@@ -29,15 +29,15 @@ export const menuItem = css`
 `;
 
 export const dropdownItem = css`
-  min-height: 50px;
-  line-height: 1;
+  min-height: 3rem;
+  line-height: 1rem;
   padding: 10px 15px;
 `;
 
 export const formItem = css`
-  font-size: 14px;
+  font-size: 0.875rem;
   border: ${({theme}) => `1px solid ${theme.formItemBorder}`};
-  border-radius: 7px;
+  border-radius: 0.5rem;
   box-sizing: border-box;
 `;
 

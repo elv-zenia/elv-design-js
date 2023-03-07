@@ -5,14 +5,15 @@ import PropTypes from "prop-types";
 
 const Tabs = ({
   defaultValue,
-  items=[]
+  items=[],
+  ...rest
 }) => {
   if(!defaultValue) {
     defaultValue = items[0].value;
   }
 
   return (
-    <StyledTabsRoot defaultValue={defaultValue}>
+    <StyledTabsRoot defaultValue={defaultValue} {...rest}>
       <StyledTabsList>
         {
           items.map(({value, label, disabled}) => (
@@ -51,7 +52,7 @@ const StyledTabsList = styled(TabsPrimitive.List)`
 const StyledTabsTrigger = styled(TabsPrimitive.Trigger)`
   background-color: transparent;
   flex: 1;
-  height: 50px;
+  height: 3rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -71,7 +72,7 @@ const StyledTabsTrigger = styled(TabsPrimitive.Trigger)`
 
 const StyledTabsContent = styled(TabsPrimitive.Content)`
   outline: none;
-  padding: 20px;
+  padding: 1.25rem;
 `;
 
 Tabs.propTypes = {

@@ -10,7 +10,8 @@ export const RadioGroup = ({
   defaultValue,
   items=[],
   orientation="vertical",
-  required=false
+  required=false,
+  ...rest
 }) => {
   return (
     <StyledRadioRoot
@@ -18,6 +19,7 @@ export const RadioGroup = ({
       disabled={disabled}
       orientation={orientation}
       required={required}
+      {...rest}
     >
       {
         items.map(({label, value, id, disabled}) => (
@@ -66,8 +68,8 @@ const Flex = styled.div`
 `;
 
 const StyledRadioGroupItem = styled(RadioGroupPrimitive.Item)`
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
   border-radius: 100%;
   border: ${({theme}) => `1px solid ${theme.radioBorder}`};
   background-color: ${({theme}) => theme.radioBg};
@@ -89,17 +91,17 @@ const StyledRadioGroupIndicator = styled(RadioGroupIndicator)`
   &::after {
     content: "";
     display: block;
-    width: 8px;
-    height: 8px;
+    width: 0.5rem;
+    height: 0.5rem;
     border-radius: 50%;
     background-color: ${({theme}) => theme.radioIndicatorBg};
   }
 `;
 
 const StyledLabel = styled(Label)`
-  line-height: 1;
-  padding-left: 15px;
-  font-size: 15px;
+  line-height: 1rem;
+  padding-left: 0.75rem;
+  font-size: 1rem;
 `;
 
 RadioGroup.propTypes = {

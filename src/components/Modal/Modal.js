@@ -17,7 +17,8 @@ const Modal = ({
   ConfirmCallback,
   danger,
   children,
-  size="sm"
+  size="sm",
+  ...rest
 }) => {
   const ModalRoot = ModalPrimitive.Root;
   const ModalTrigger = ModalPrimitive.Trigger;
@@ -26,7 +27,7 @@ const Modal = ({
   const ModalClose = ModalPrimitive.Close;
 
   return (
-    <ModalRoot open={open} onOpenChange={onOpenChange}>
+    <ModalRoot open={open} onOpenChange={onOpenChange} {...rest}>
       <ModalTrigger asChild>{ trigger }</ModalTrigger>
       <StyledModalOverlay>
         <StyledModalContent size={size}>
@@ -103,7 +104,7 @@ const StyledModalContent = styled(ModalPrimitive.Content)`
   display: flex;
   flex-direction: column;
   left: 50%;
-  padding: 30px;
+  padding: 2rem;
   position: fixed;
   top: 50%;
   transform: translate(-50%, -50%);

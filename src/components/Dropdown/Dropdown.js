@@ -5,7 +5,7 @@ import {CheckIcon, ChevronDownIcon} from "@radix-ui/react-icons";
 import PropTypes from "prop-types";
 import {dropdownItem, formItem, formItemLabel, menuContent, menuItem} from "../shared-styles";
 
-const Dropdown = ({label, items=[], placeholder="Select an option", className=""}) => {
+const Dropdown = ({label, items=[], placeholder="Select an option", ...rest}) => {
   const SelectRoot = SelectPrimitive.Root;
   const SelectTrigger = StyledTrigger;
   const SelectIcon = SelectPrimitive.SelectIcon;
@@ -17,7 +17,7 @@ const Dropdown = ({label, items=[], placeholder="Select an option", className=""
   const SelectItemText = SelectPrimitive.ItemText;
 
   return (
-    <SelectRoot className={className}>
+    <SelectRoot {...rest}>
       <SelectTrigger>
         { label && <TriggerLabel>{label}</TriggerLabel> }
         <TriggerTextIconFlex>
@@ -95,7 +95,7 @@ const StyledItem = styled(SelectPrimitive.Item)`
 const StyledItemIndicator = styled(SelectPrimitive.ItemIndicator)`
   position: absolute;
   left: 0;
-  width: 25px;
+  width: 1.5rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -114,12 +114,7 @@ Dropdown.propTypes = {
   /**
    * Placeholder text to display when no value has been selected.
    */
-  placeholder: PropTypes.string,
-
-  /**
-   * An optional className to be added.
-   */
-  className: PropTypes.string
+  placeholder: PropTypes.string
 };
 
 export default Dropdown;

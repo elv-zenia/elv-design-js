@@ -3,7 +3,13 @@ import SVG from "react-inlinesvg";
 import PropTypes from "prop-types";
 import styled, {css} from "styled-components";
 
-const ImageIcon = ({icon, alternateIcon, className, alt, title, props}) => {
+const ImageIcon = ({
+  icon,
+  alternateIcon,
+  alt,
+  title,
+  ...rest
+}) => {
   const [error, setError] = useState(false);
   const currentIcon = error ? alternateIcon : icon;
   const handleError = error ? undefined : () => setError(true);
@@ -12,17 +18,19 @@ const ImageIcon = ({icon, alternateIcon, className, alt, title, props}) => {
 
   if(currentIcon.toLowerCase().endsWith(".svg")) {
     return (
-      <StyledSVG src={currentIcon} className={className} alt={alt} />
+      <StyledSVG
+        src={currentIcon}
+        title={title}
+        {...rest}
+      />
     );
   } else {
     return (
       <StyledImage
-        title={title}
         alt={alt}
-        className={className}
         src={currentIcon}
         onError={handleError}
-        {...props}
+        {...rest}
       />
     );
   }
@@ -58,19 +66,15 @@ ImageIcon.propTypes = {
   className: PropTypes.string,
 
   /**
-   * Alternative text to describe the icon.
+   * Alternative text to describe the image. Not necessary
+   * for SVG images.
    */
   alt: PropTypes.string,
 
   /**
-   * Title text for the icon.
+   * Title text for the SVG image.
    */
   title: PropTypes.string,
-
-  /**
-   * Additional props.
-   */
-  props: PropTypes.object
 };
 
 export default ImageIcon;

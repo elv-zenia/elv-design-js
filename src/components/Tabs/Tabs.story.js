@@ -17,7 +17,7 @@ const TabTwo = (
   <div>
     More content
     <div>
-      <Button style={{marginTop: "10px"}}>Example Button</Button>
+      <Button style={{marginTop: "0.875rem"}}>Example Button</Button>
     </div>
   </div>
 );

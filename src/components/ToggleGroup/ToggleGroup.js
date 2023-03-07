@@ -9,7 +9,8 @@ const ToggleGroup = ({
   value,
   onValueChange,
   defaultValue,
-  orientation="vertical"
+  orientation="vertical",
+  ...rest
 }) => {
   return (
     <StyledToggleGroupRoot
@@ -18,6 +19,7 @@ const ToggleGroup = ({
       onValueChange={onValueChange}
       defaultValue={defaultValue}
       orientation={orientation}
+      {...rest}
     >
       {
         items.map(({label, value, disabled}) => (
@@ -30,15 +32,15 @@ const ToggleGroup = ({
 
 const StyledToggleGroupRoot = styled(ToggleGroupPrimitive.Root)`
   display: inline-flex;
-  gap: 8px;
+  gap: 0.5rem;
 `;
 
 const StyledToggleGroupItem = styled(ToggleGroupPrimitive.Item)`
   background-color: ${({theme}) => theme.toggleGroupBg};
   border: ${({theme}) => `1px solid ${theme.toggleGroupBorder}`};
   color: ${({theme}) => theme.textPrimaryColor};
-  height: 40px;
-  min-width: 60px;
+  height: 2.5rem;
+  min-width: 3.75rem;
   
   &[data-state=on] {
     border: ${({theme}) => `1px solid ${theme.toggleGroupSelectedBorder}`};
