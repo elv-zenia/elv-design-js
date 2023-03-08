@@ -21,6 +21,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   button {
+    background: none;
     border-width: 0;
     color: inherit;
     cursor: pointer;
@@ -29,6 +30,8 @@ export const GlobalStyle = createGlobalStyle`
 
   input {
     color: ${({theme}) => theme.textPrimaryColor};
+    background: none;
+    border: 0;
     
     &::-moz-focus-inner {
       border: 0;

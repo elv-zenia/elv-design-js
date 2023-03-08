@@ -5,6 +5,8 @@ import HomeIcon from "./home.svg";
 import PictureIcon from "./picture.svg";
 import MenuIcon from "./menu.svg";
 import QuestionIcon from "./question.svg";
+import SearchIcon from "./search.svg";
+import XIcon from "./x.svg";
 
 export {
   CheckIcon,
@@ -13,5 +15,7 @@ export {
   HomeIcon,
   MenuIcon,
   PictureIcon,
-  QuestionIcon
+  QuestionIcon,
+  SearchIcon,
+  XIcon
 };
