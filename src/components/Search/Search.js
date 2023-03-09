@@ -75,14 +75,14 @@ const Container = styled.div`
 
 const Input = styled.input`
   width: 100%;
-  border: 1px solid gray;
+  border: 1px solid ${({theme}) => theme.searchBorder};
   height: 2.5rem;
   padding: 0 2.5rem;
   box-sizing: border-box;
   border-radius: 1rem;
   
   &:disabled {
-    opacity: 0.4;
+    color: ${({theme}) => theme.textDisabled}
     pointer-events: none;
   }
 `;
@@ -90,8 +90,7 @@ const Input = styled.input`
 const StyledSearchIcon = styled(ImageIcon)`
   position: absolute;
   left: 1rem;
-  color: ${({theme}) => theme.textPrimaryColor};
-  opacity: ${({disabled}) => disabled ? 0.4 : 1};
+  color: ${({theme, disabled}) => disabled ? theme.textDisabled : theme.textPrimaryColor};
 `;
 
 const CloseButton = styled.button`

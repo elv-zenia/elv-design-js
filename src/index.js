@@ -1,3 +1,4 @@
+import Accordion from "./components/Accordion";
 import AspectRatio from "./components/AspectRatio";
 import Avatar from "./components/Avatar";
 import Button from "./components/Button";
@@ -8,6 +9,7 @@ import DropdownMenu from "./components/DropdownMenu";
 import ImageIcon from "./components/ImageIcon";
 import Label from "./components/Label";
 import RadioGroup from "./components/Radio";
+import Search from "./components/Search";
 import Tabs from "./components/Tabs";
 import TextInput from "./components/TextInput";
 import ToggleGroup from "./components/ToggleGroup";
@@ -18,6 +20,7 @@ import {ThemeProvider} from "styled-components";
 import {lightTheme, darkTheme} from "./static/themes";
 
 export {
+  Accordion,
   AspectRatio,
   Avatar,
   Button,
@@ -28,6 +31,7 @@ export {
   Label,
   Modal,
   RadioGroup,
+  Search,
   Tabs,
   TextInput,
   ToggleGroup,

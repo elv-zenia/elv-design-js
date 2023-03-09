@@ -31,16 +31,16 @@ const Dropdown = ({label, items=[], placeholder="Select an option", ...rest}) =>
         <SelectContent>
           <SelectViewport>
             {
-              items.map(({label, value, disabled}) => (
+              items.map(item => (
                 <SelectItem
-                  value={value}
-                  disabled={disabled}
-                  key={`dropdown-item-${value}`}
+                  value={item.value}
+                  disabled={item.disabled}
+                  key={`dropdown-item-${item.value}`}
                 >
                   <StyledItemIndicator>
                     <CheckIcon />
                   </StyledItemIndicator>
-                  <SelectItemText>{ label }</SelectItemText>
+                  <SelectItemText>{ item.label }</SelectItemText>
                 </SelectItem>
               ))
             }

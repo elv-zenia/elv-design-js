@@ -18,7 +18,7 @@ export const menuItem = css`
   padding: 0 1.5rem;
 
   &[data-disabled] {
-    color: lightgray;
+    color: ${({theme}) => theme.textDisabled};
     pointer-events: none;
   }
 

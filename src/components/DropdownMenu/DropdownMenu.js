@@ -14,8 +14,8 @@ const DropdownMenu = ({open, onOpenChange, trigger, items=[], ...rest}) => {
       <DropdownMenuTrigger asChild>{ trigger }</DropdownMenuTrigger>
       <DropdownMenuPortal>
         <StyledDropdownMenuContent>
-          {items.map(({label, disabled}) => (
-            <StyledDropdownMenuItem key={`dropdown-menu-item-${label}`} disabled={disabled}>{ label }</StyledDropdownMenuItem>
+          {items.map(item => (
+            <StyledDropdownMenuItem key={`dropdown-menu-item-${item.label}`} disabled={item.disabled}>{ item.label }</StyledDropdownMenuItem>
           ))}
         </StyledDropdownMenuContent>
       </DropdownMenuPortal>

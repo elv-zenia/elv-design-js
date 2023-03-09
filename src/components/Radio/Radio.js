@@ -22,12 +22,12 @@ export const RadioGroup = ({
       {...rest}
     >
       {
-        items.map(({label, value, id, disabled}) => (
+        items.map(item => (
           <Radio
-            label={label}
-            value={value}
-            id={id}
-            disabled={disabled}
+            label={item.label}
+            value={item.value}
+            id={item.id}
+            disabled={item.disabled}
           />
         ))
       }
@@ -75,7 +75,7 @@ const StyledRadioGroupItem = styled(RadioGroupPrimitive.Item)`
   background-color: ${({theme}) => theme.radioBg};
   
   &[data-disabled] {
-    opacity: 30%;
+    ${({theme}) => theme.textDisabled}
     pointer-events: none;
   }
 `;

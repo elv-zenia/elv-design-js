@@ -3,6 +3,10 @@ import {primaryFont, typeScale} from "./typography";
 
 export const lightTheme = {
   //
+  // Accordion
+  //
+  accordionBorder: neutral[20],
+  //
   // Avatar
   //
   avatarBg: dark[10],
@@ -55,6 +59,10 @@ export const lightTheme = {
   radioIndicatorBg: dark[10],
   radioBg: "transparent",
   //
+  // Search
+  //
+  searchBorder: neutral[20],
+  //
   // Tabs
   //
   tabTextColor: purple[50],
@@ -96,6 +104,10 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
+  //
+  // Accordion
+  //
+  accordionBorder: neutral[10],
   //
   // Avatar
   //
@@ -143,6 +155,10 @@ export const darkTheme = {
   radioBorder: neutral[10],
   radioIndicatorBg: neutral[10],
   radioBg: "transparent",
+  //
+  // Search
+  //
+  searchBorder: neutral[20],
   //
   // Toggle Group
   //

@@ -22,8 +22,8 @@ const ToggleGroup = ({
       {...rest}
     >
       {
-        items.map(({label, value, disabled}) => (
-          <StyledToggleGroupItem value={value} disabled={disabled}>{ label }</StyledToggleGroupItem>
+        items.map(item => (
+          <StyledToggleGroupItem value={item.value} disabled={item.disabled}>{ item.label }</StyledToggleGroupItem>
         ))
       }
     </StyledToggleGroupRoot>

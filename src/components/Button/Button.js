@@ -76,12 +76,12 @@ const StyledButton = styled.button`
   transition: 0.3s;
   
   &:hover:not(:disabled) {
-    opacity: 80%;
+    opacity: 0.8;
   }
   
   &:disabled {
     cursor: not-allowed;
-    opacity: 40%;
+    opacity: 0.4;
   }
   
   ${({variant, theme}) =>

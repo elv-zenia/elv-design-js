@@ -29,8 +29,8 @@ const Tabs = ({
         }
       </StyledTabsList>
       {
-        items.map(({value, content}) => (
-          <StyledTabsContent key={`content-${value}`} value={value}>{ content }</StyledTabsContent>
+        items.map(item => (
+          <StyledTabsContent key={`content-${item.value}`} value={item.value}>{ item.content }</StyledTabsContent>
         ))
       }
     </StyledTabsRoot>
@@ -66,6 +66,7 @@ const StyledTabsTrigger = styled(TabsPrimitive.Trigger)`
   }
   
   &[data-disabled] {
+    color: ${({theme}) => theme.textDisabled};
     pointer-events: none;
   }
 `;
